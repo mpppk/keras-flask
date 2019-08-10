@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+tensorflow = "*"
+keras = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
