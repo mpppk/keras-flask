@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, redirect, request, jsonify
 from keras import models
 import numpy as np
@@ -7,7 +9,9 @@ import io
 
 
 app = Flask(__name__)
-model = None
+# model = None
+model = models.load_model('sutaba-model.h5')
+model.summary()
 graph = tf.get_default_graph()
 
 classes = [
@@ -43,5 +47,6 @@ def predict():
 
 
 if __name__ == '__main__':
-    load_model()
-    app.run(debug=False, host="0.0.0.0", port=5000)
+    # load_model()
+    app.run(debug=True, host="0.0.0.0", port=os.environ.get('PORT', 5000))
+

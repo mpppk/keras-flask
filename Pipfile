@@ -10,6 +10,7 @@ flask = "*"
 tensorflow = "*"
 keras = "*"
 pillow = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
