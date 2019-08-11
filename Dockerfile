@@ -6,5 +6,4 @@ COPY Pipfile.lock /src
 WORKDIR /src
 RUN pipenv install --system
 COPY . /src
-CMD exec gunicorn --bind :5000 --workers 1 --threads 8 app:app
-#ENTRYPOINT ["exec", "gunicorn", "--bind", ":$PORT", ""]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
